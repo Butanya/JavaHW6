@@ -3,12 +3,11 @@ import org.junit.jupiter.api.Test;
 import ru.netology.stats.StatsService;
 
 public class StatsServiceTest {
+    int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
     @Test
     public void shouldSumSales() {
         StatsService service = new StatsService();
-
-        int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
         long actual = service.sum(sales);
         long expected = 8 + 15 + 13 + 15 + 17 + 20 + 19 + 20 + 7 + 14 + 14 + 18;
@@ -20,10 +19,8 @@ public class StatsServiceTest {
     public void shouldFindAverage() {
         StatsService service = new StatsService();
 
-        int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-
-        int actual = service.average(sales);
-        int expected = (8 + 15 + 13 + 15 + 17 + 20 + 19 + 20 + 7 + 14 + 14 + 18) / 12;
+        long actual = service.average(sales);
+        long expected = (8 + 15 + 13 + 15 + 17 + 20 + 19 + 20 + 7 + 14 + 14 + 18) / sales.length;
 
         Assertions.assertEquals(expected, actual);
     }
@@ -32,8 +29,6 @@ public class StatsServiceTest {
     @Test
     public void shouldFindMaxSalesMonth() {
         StatsService service = new StatsService();
-
-        int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
         int actual = service.maxi(sales);
         int expected = 8;
@@ -45,8 +40,6 @@ public class StatsServiceTest {
     public void shouldFindMinSalesMonth() {
         StatsService service = new StatsService();
 
-        int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-
         int actual = service.mini(sales);
         int expected = 9;
 
@@ -57,8 +50,6 @@ public class StatsServiceTest {
     public void shouldFindNumberOfMonthsWitSalesBelowAverage() {
         StatsService service = new StatsService();
 
-        int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-
         int actual = service.miniNumbers(sales);
         int expected = 5;
 
@@ -68,8 +59,6 @@ public class StatsServiceTest {
     @Test
     public void shouldFindNumberOfMonthsWitSalesAboveAverage() {
         StatsService service = new StatsService();
-
-        int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
         int actual = service.maxiNumbers(sales);
         int expected = 5;

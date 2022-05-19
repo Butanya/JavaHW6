@@ -14,6 +14,16 @@ public class Main {
 
         int averageFinal = average / 12;
         System.out.println(averageFinal);
+
+
+
+        int sum = 0;
+        for (int sale : sales) {
+            sum += sale;
+
+        }
+
+        System.out.println(sum);
     }
 
 }
